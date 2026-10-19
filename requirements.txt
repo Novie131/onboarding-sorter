@@ -1,0 +1,6 @@
+streamlit>=1.46
+pypdfium2>=4.30
+numpy
+pillow
+requests
+python-dotenv

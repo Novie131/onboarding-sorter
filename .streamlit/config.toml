@@ -1,0 +1,12 @@
+[server]
+# 開放內網連線：同網段的電腦可用 http://192.168.2.22:8501 存取
+# 改回 "localhost" 就只剩本機能連
+address = "0.0.0.0"
+port = 8501
+maxUploadSize = 1000
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
