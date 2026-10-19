@@ -188,11 +188,11 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 ├─ requirements.txt
 ├─ .env.example        設定範本（值留空）
 ├─ .env                從 .env.example 複製，值留空，由使用者自己填
-├─ .gitignore          排除 .env
+├─ .gitignore          排除 .env、.venv、log
 ├─ .streamlit/config.toml
 ├─ 啟動.bat            Windows（CRLF 換行）
 ├─ 啟動.command        Mac / Linux（chmod +x）
-└─ 使用說明.txt
+└─ README.md           專案說明＋使用說明
 ```
 
 ## 11. 參考程式碼（已驗證，請照抄）
@@ -1114,6 +1114,8 @@ LLM_EXTRA_BODY=
 ```
 .env
 __pycache__/
+.venv/
+*.log
 ```
 
 ### `.streamlit/config.toml`
@@ -1156,9 +1158,9 @@ python3 -m pip install -q -r requirements.txt
 python3 -m streamlit run app.py
 ```
 
-### `使用說明.txt`
+### `README.md`
 
-請用繁體中文、口語化地寫給非工程背景的使用者，內容包含：
+使用說明直接寫在 README.md（不另外建立使用說明.txt）。請用繁體中文、口語化地寫給非工程背景的使用者，除了專案簡介、專案結構、安裝方式之外，內容包含：
 
 - **第一次安裝：** 需 Python 3.10+（Windows 安裝時勾選「Add python.exe to PATH」），雙擊啟動檔。
 - **設定模型：** 打開 `.env`，填 `LLM_BASE_URL`（結尾要有 `/v1`）和 `LLM_MODEL`，存檔後重新啟動。執行 `python check_llm.py` 測試，或按網頁側邊欄「測試連線」。

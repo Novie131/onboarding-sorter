@@ -33,7 +33,6 @@ onboarding-sorter/
 ├─ requirements.txt        Python 套件
 ├─ .env.example            模型設定範本（複製成 .env 後填寫）
 ├─ .streamlit/config.toml  Streamlit 伺服器設定（埠號、上傳上限等）
-├─ 使用說明.txt             給使用者看的純文字說明
 └─ Document/Build.md       建置說明與參考程式碼
 ```
 
