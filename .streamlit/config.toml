@@ -10,3 +10,19 @@ gatherUsageStats = false
 
 [client]
 toolbarMode = "minimal"
+
+[theme]
+# 字體大小（預設 16）。所有文字、標題、間距都會跟著等比例放大
+baseFontSize = 17
+baseRadius = "medium"
+showSidebarBorder = true
+
+# 主色改成藍色（預設是紅色，跟錯誤訊息容易混淆）。
+# 淺色、深色分開設定，右上角 ⋮ 選單才會出現 System / Light / Dark 切換；
+# 只在 [theme] 設 primaryColor 會變成單一主題，切換選項就消失了。
+# 側邊欄可另選強調色（app.py 的 ACCENTS），藍色就是這裡的顏色。
+[theme.light]
+primaryColor = "#3B7DDD"
+
+[theme.dark]
+primaryColor = "#5B9BF0"
