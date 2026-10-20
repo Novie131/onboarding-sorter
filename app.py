@@ -1,5 +1,5 @@
 """
-新進人員報到文件 分類網頁
+SortOCR｜PDF 分類工坊 網頁
 
 啟動：streamlit run app.py
 掃描檔只在這台電腦處理；啟用 AI 配對時，只有「姓名欄 / 學號欄小圖」會送到 .env 設定的地端模型伺服器。
@@ -19,9 +19,9 @@ import core
 load_dotenv(Path(__file__).resolve().parent / ".env", override=True)
 cfg = ai_match.config()
 
-st.set_page_config(page_title="報到文件分類", page_icon="📁", layout="wide")
+st.set_page_config(page_title="SortOCR｜PDF 分類工坊", page_icon="🛠️", layout="wide")
 st.html('<style>[data-testid="stMainBlockContainer"] { max-width: 1400px; }</style>')
-st.title("報到文件分類")
+st.title("SortOCR｜PDF 分類工坊")
 st.caption("把報到時繳交的整疊掃描檔，依人切分、命名並打包。掃描檔只在這台電腦處理。")
 
 KIND_LABEL = {core.GRANT: "研究獎助生", core.ASSISTANT: "兼任研究助理", core.UNKNOWN: "判斷不出"}
@@ -139,9 +139,9 @@ with st.sidebar:
     st.divider()
     st.caption("啟用 AI 時，只有姓名欄 / 學號欄的小圖會送到 .env 設定的地端模型伺服器。")
 
-tab_sort, tab_merge = st.tabs([":material/folder_open: 報到文件分類", ":material/picture_as_pdf: 合併 PDF"])
+tab_sort, tab_merge = st.tabs([":material/folder_open: PDF 分類", ":material/picture_as_pdf: 合併 PDF"])
 
-# ==================== 報到文件分類 ====================
+# ==================== PDF 分類 ====================
 with tab_sort:
     # 1、2 左右並排（有框的欄位會等高），手機上自動上下疊
     col1, col2 = st.columns(2, border=True)
@@ -328,7 +328,7 @@ with tab_sort:
             with c2:
                 st.download_button(
                     "下載壓縮檔", s.get("zip") or b"", icon=":material/download:", width="stretch",
-                    file_name=f"報到文件分類_{datetime.now():%Y%m%d_%H%M}.zip", mime="application/zip",
+                    file_name=f"SortOCR_{datetime.now():%Y%m%d_%H%M}.zip", mime="application/zip",
                     disabled=not s.get("zip"),
                 )
             if s.get("zip"):
